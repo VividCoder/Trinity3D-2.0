@@ -13,6 +13,14 @@ IDraw::IDraw(int w,int h) {
 
 }
 
+void IDraw::SingleDrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g, float b, float a) {
+
+	Begin();
+	DrawTex(x, y, w, h, tex, r, g, b, a);
+	End();
+
+}
+
 void IDraw::Begin() {
 
 	Draws.resize(0);
@@ -26,10 +34,13 @@ void IDraw::End() {
 
 	
 	glDisable(GL_CULL_FACE);
-	glDisable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
+
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glViewport(0, 0, dw, dh);
+	glClearDepth(1.0f);
+	glDepthFunc(GL_LESS);
 	fx->bind();
 	//return;
 
@@ -228,7 +239,7 @@ void IDraw::DrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g
 
 	info->Tex = tex;
 
-	info->z = 0;
+	info->z = drawZ;
 	info->r = r;
 	info->g = g;
 	info->b = b;

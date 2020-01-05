@@ -10,7 +10,7 @@ FXImageDraw::FXImageDraw(int w,int h) {
 
 void FXImageDraw::setPars() {
 
-	glm::mat4 pMat = glm::ortho((float)0, (float)pw, (float)ph, (float)0, (float)0, (float)100);
+	glm::mat4 pMat = glm::ortho((float)0, (float)pw, (float)ph, (float)0, (float)-100, (float)100);
 
 
 	setInt("tR", 0);

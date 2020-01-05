@@ -18,6 +18,7 @@ public:
 private:
 
 	Texture2D* tex1;
+	Texture2D* tex2;
 	IDraw* draw;
 
 };

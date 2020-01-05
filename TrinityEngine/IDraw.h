@@ -35,6 +35,7 @@ public:
 	DrawList* GetDrawList(Texture2D* tex);
 	void DrawTex(int x, int y, int w, int h,Texture2D * tex,float r, float g, float b, float a);
 	void End();
+	void SingleDrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g, float b, float a);
 
 
 private:
