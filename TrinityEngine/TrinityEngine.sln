@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrinityEngine", "TrinityEngine.vcxproj", "{4345B147-2DD9-4D8E-AF67-8E47B82E79F3}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample1", "..\Sample1\Sample1.vcxproj", "{EA6B7D47-CCEC-4197-A9C6-B956C48D6A39}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4345B147-2DD9-4D8E-AF67-8E47B82E79F3} = {4345B147-2DD9-4D8E-AF67-8E47B82E79F3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

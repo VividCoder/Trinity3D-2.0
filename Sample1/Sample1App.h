@@ -2,6 +2,7 @@
 #include "Application.h"
 
 class Texture2D;
+class IDraw;
 
 class Sample1App :
 	public Application
@@ -17,6 +18,7 @@ public:
 private:
 
 	Texture2D* tex1;
+	IDraw* draw;
 
 };
 

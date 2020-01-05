@@ -14,6 +14,12 @@ void Application::CrWindow(int w, int h, const char* title) {
 
 	glfwMakeContextCurrent(Window);
 
+	glViewport(0, 0, w, h);
+	glDisable(GL_BLEND);
+	glDisable(GL_SCISSOR_TEST);
+
+	glewInit();
+
 
 
 };
