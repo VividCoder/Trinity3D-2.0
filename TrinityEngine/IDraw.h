@@ -4,6 +4,9 @@
 #include <list>
 
 class Texture2D;
+class FXImageDraw;
+
+
 
 struct DrawInfo {
 
@@ -25,7 +28,7 @@ struct DrawList {
 class IDraw
 {
 public:
-	IDraw();
+	IDraw(int w,int h);
 
 	void Begin();
 
@@ -37,6 +40,8 @@ public:
 private:
 	std::vector<DrawList*> Draws;
 	float drawZ;
+	FXImageDraw* fx;
+	int dw, dh;
 
 };
 

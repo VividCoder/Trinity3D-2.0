@@ -10,6 +10,10 @@ Application::Application() {
 void Application::CrWindow(int w, int h, const char* title) {
 
 	glfwInit();
+
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+
 	Window = glfwCreateWindow(w, h, title, NULL, NULL);
 
 	glfwMakeContextCurrent(Window);
@@ -20,9 +24,21 @@ void Application::CrWindow(int w, int h, const char* title) {
 
 	glewInit();
 
+	WinWidth = w;
+	WinHeight = h;
+
 
 
 };
+
+int Application::Width() {
+	return WinWidth;
+}
+
+int Application::Height() {
+	return WinHeight;
+}
+
 
 void Application::Run() {
 
@@ -34,7 +50,7 @@ void Application::Run() {
 
 		Update();
 
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		Render();
 

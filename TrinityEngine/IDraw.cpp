@@ -1,11 +1,15 @@
 #include "pch.h"
 #include "IDraw.h"
 #include "Texture2D.h"
+#include "FXImageDraw.h"
 
-IDraw::IDraw() {
+IDraw::IDraw(int w,int h) {
 
 	Draws.resize(0);
 	drawZ = 0.01f;
+	dw = w;
+	dh = h;
+	fx = new FXImageDraw(w,h);
 
 }
 
@@ -18,12 +22,17 @@ void IDraw::Begin() {
 
 void IDraw::End() {
 
-	printf("DrawLists:%d \n", Draws.size());
+	//printf("DrawLists:%d \n", Draws.size());
 
 	
 	glDisable(GL_CULL_FACE);
 	glDisable(GL_DEPTH_TEST);
-	
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glViewport(0, 0, dw, dh);
+	fx->bind();
+	//return;
+
 	for (int i = 0; i < Draws.size(); i++) {
 
 		GLuint va;
@@ -36,8 +45,19 @@ void IDraw::End() {
 		int draw_c = list->Draws.size() * 4;
 		int draw_i = 0;
 
-		float* vert_data = (float*)malloc((size_t) draw_c * 9 * 4);
-		uint32_t* ind_data = (uint32_t*)malloc((size_t)draw_c * 4);
+
+		std::vector<GLfloat> vert_data;
+		vert_data.resize(0);
+
+		//float vert_data[draw_c];
+		std::vector<GLuint> ind_data;
+		ind_data.resize(0);
+		//uint32_t ind_data[draw_c)];
+
+
+
+		//float* vert_data = (float*)malloc((size_t) draw_c * 9 * 4);
+		//uint32_t* ind_data = (uint32_t*)malloc((size_t)draw_c * 4);
 
 
 		int vert_i = 0;
@@ -49,7 +69,7 @@ void IDraw::End() {
 
 			for (int l = 0; l < 4; l++) {
 
-				ind_data[int_i] = (uint32_t)int_i;
+				ind_data.push_back((GLuint)int_i);
 				int_i++;
 
 
@@ -57,73 +77,80 @@ void IDraw::End() {
 
 			DrawInfo* info = list->Draws[k];
 
-			vert_data[vert_i++] = info->x[0];
-			vert_data[vert_i++] = info->y[0];
-			vert_data[vert_i++] = info->z;
+			vert_data.push_back((GLfloat)info->x[0]);
+			vert_data.push_back((GLfloat)info->y[0]);
+				vert_data.push_back((GLfloat)info->z);
 
-			vert_data[vert_i++] = 0;
-			vert_data[vert_i++] = 0;
+				vert_data.push_back((GLfloat)0);
+				vert_data.push_back((GLfloat)0);
 
-			vert_data[vert_i++] = info->r;
-			vert_data[vert_i++] = info->g;
-			vert_data[vert_i++] = info->b;
-			vert_data[vert_i++] = info->a;
+				vert_data.push_back((GLfloat)info->r);
+				vert_data.push_back((GLfloat)info->g);
+				vert_data.push_back((GLfloat)info->b);
+				vert_data.push_back((GLfloat)info->a);
 
 			// - V2
 
-			vert_data[vert_i++] = info->x[1];
-			vert_data[vert_i++] = info->y[1];
-			vert_data[vert_i++] = info->z;
+				vert_data.push_back((GLfloat)info->x[1]);
+				vert_data.push_back((GLfloat)info->y[1]);
+				vert_data.push_back((GLfloat)info->z);
 
-			vert_data[vert_i++] = 1;
-			vert_data[vert_i++] = 0;
+				vert_data.push_back((GLfloat)1);
+				vert_data.push_back((GLfloat)0);
 
-			vert_data[vert_i++] = info->r;
-			vert_data[vert_i++] = info->g;
-			vert_data[vert_i++] = info->b;
-			vert_data[vert_i++] = info->a;
+				vert_data.push_back((GLfloat)info->r);
+				vert_data.push_back((GLfloat)info->g);
+				vert_data.push_back((GLfloat)info->b);
+				vert_data.push_back((GLfloat)info->a);
 
 			// - V3
 
-			vert_data[vert_i++] = info->x[2];
-			vert_data[vert_i++] = info->y[2];
-			vert_data[vert_i++] = info->z;
+				vert_data.push_back((GLfloat)info->x[2]);
+				vert_data.push_back((GLfloat)info->y[2]);
+				vert_data.push_back((GLfloat)info->z);
 
-			vert_data[vert_i++] = 1;
-			vert_data[vert_i++] = 1;
+				vert_data.push_back((GLfloat)1);
+				vert_data.push_back((GLfloat)1);
 
-			vert_data[vert_i++] = info->r;
-			vert_data[vert_i++] = info->g;
-			vert_data[vert_i++] = info->b;
-			vert_data[vert_i++] = info->a;
+				vert_data.push_back((GLfloat)info->r);
+				vert_data.push_back((GLfloat)info->g);
+				vert_data.push_back((GLfloat)info->b);
+				vert_data.push_back((GLfloat)info->a);
 
 			// - v4
 
-			vert_data[vert_i++] = info->x[3];
-			vert_data[vert_i++] = info->y[3];
-			vert_data[vert_i++] = info->z;
+				vert_data.push_back((GLfloat)info->x[3]);
+				vert_data.push_back((GLfloat)info->y[3]);
+				vert_data.push_back((GLfloat)info->z);
 
-			vert_data[vert_i++] = 0;
-			vert_data[vert_i++] = 1;
+				vert_data.push_back((GLfloat)0);
+				vert_data.push_back((GLfloat)1);
 
-			vert_data[vert_i++] = info->r;
-			vert_data[vert_i++] = info->g;
-			vert_data[vert_i++] = info->b;
-			vert_data[vert_i++] = info->a;
+				vert_data.push_back((GLfloat)info->r);
+				vert_data.push_back((GLfloat)info->g);
+				vert_data.push_back((GLfloat)info->b);
+				vert_data.push_back((GLfloat)info->a);
 
-			
+				vert_i += 36;
 
 		};
 
+		
 		glBindVertexArray(va);
 
 		glBindBuffer(GL_ARRAY_BUFFER,vb);
 
-		glBufferData(GL_ARRAY_BUFFER, vert_i * 4, (const void*)vert_data, GL_STATIC_DRAW);
+		
+
+		GLsizeiptr siz = ((GLsizeiptr)(vert_i) * 4);
+
+		glBufferData(GL_ARRAY_BUFFER, siz, (const void*)vert_data.data(), GL_STATIC_DRAW);
+
+		
 
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, false, 9 * 4, 0);
-//		g//lVertexAttribP
+		
 
 
 
@@ -136,8 +163,12 @@ void IDraw::End() {
 		glEnableVertexAttribArray(2);
 		glVertexAttribPointer(2, 4, GL_FLOAT, false, 9 * 4, (void *)(5 * 4));
 
-		glDrawElements(GL_QUADS, draw_c, GL_UNSIGNED_INT, (const void *)ind_data);
+		
+	
+		glDrawElements(GL_QUADS, draw_c, GL_UNSIGNED_INT, ind_data.data());
 
+		
+		
 		glDisableVertexAttribArray(0);
 		glDisableVertexAttribArray(1);
 		glDisableVertexAttribArray(2);
@@ -146,9 +177,15 @@ void IDraw::End() {
 		glDeleteBuffers(1,&vb);
 		glDeleteVertexArrays(1, &va);
 
+		
+
 		list->Tex->Release(0);
 
 	};
+
+
+	fx->unbind();
+
 
 };
 
@@ -191,7 +228,7 @@ void IDraw::DrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g
 
 	info->Tex = tex;
 
-	info->z = drawZ;
+	info->z = 0;
 	info->r = r;
 	info->g = g;
 	info->b = b;

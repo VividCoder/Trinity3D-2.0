@@ -11,6 +11,10 @@
 #include "framework.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
 
 #endif //PCH_H

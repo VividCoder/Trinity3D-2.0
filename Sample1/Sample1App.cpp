@@ -12,7 +12,7 @@ Sample1App::Sample1App() {
 void Sample1App::Init() {
 
 	tex1 = new Texture2D("Data/Test/logo1.png", true);
-	draw = new IDraw();
+	draw = new IDraw(Width(),Height());
 
 };
 
@@ -26,7 +26,8 @@ void Sample1App::Render() {
 
 	draw->Begin();
 	
-	draw->DrawTex(20, 20, 300, 300, tex1, 1, 1, 1, 1);
+	draw->DrawTex(50, 50, 260,260, tex1, 1, 1, 1, 1);
+	draw->DrawTex(100, 100, 260, 260, tex1, 1, 1, 1, 1);
 
 	draw->End();
 

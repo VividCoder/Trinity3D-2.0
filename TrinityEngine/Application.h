@@ -15,9 +15,13 @@ public:
 	virtual void Update() {};
 	virtual void Render() {};
 
+	int Width();
+	int Height();
+
 	void Run();
 
 private:
 	GLFWwindow* Window;
+	int WinWidth, WinHeight;
 };
 
