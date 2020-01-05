@@ -16,5 +16,8 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
 
 #endif //PCH_H
