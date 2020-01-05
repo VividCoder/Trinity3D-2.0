@@ -39,6 +39,7 @@ public:
 
 
 private:
+	GLuint va, vb;
 	std::vector<DrawList*> Draws;
 	float drawZ;
 	FXImageDraw* fx;

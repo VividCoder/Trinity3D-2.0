@@ -10,11 +10,14 @@ IDraw::IDraw(int w,int h) {
 	dw = w;
 	dh = h;
 	fx = new FXImageDraw(w,h);
+	va = 0;
+	vb = 0;
 
 }
 
 void IDraw::SingleDrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g, float b, float a) {
 
+	glClear(GL_DEPTH_BUFFER_BIT);
 	Begin();
 	DrawTex(x, y, w, h, tex, r, g, b, a);
 	End();
@@ -46,11 +49,13 @@ void IDraw::End() {
 
 	for (int i = 0; i < Draws.size(); i++) {
 
-		GLuint va;
-		glGenVertexArrays(1, &va);
-		GLuint vb;
-		glGenBuffers(1, &vb);
+		//GLuint va;
 
+		if (va == 0) {
+			glGenVertexArrays(1, &va);
+		//	GLuint vb;
+			glGenBuffers(1, &vb);
+		}
 		DrawList* list = Draws[i];
 
 		int draw_c = list->Draws.size() * 4;
@@ -155,7 +160,7 @@ void IDraw::End() {
 
 		GLsizeiptr siz = ((GLsizeiptr)(vert_i) * 4);
 
-		glBufferData(GL_ARRAY_BUFFER, siz, (const void*)vert_data.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, siz, (const void*)vert_data.data(),GL_DYNAMIC_DRAW);
 
 		
 
@@ -185,8 +190,8 @@ void IDraw::End() {
 		glDisableVertexAttribArray(2);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		glDeleteBuffers(1,&vb);
-		glDeleteVertexArrays(1, &va);
+//		glDeleteBuffers(1,&vb);
+	//	glDeleteVertexArrays(1, &va);
 
 		
 

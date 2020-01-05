@@ -41,6 +41,8 @@ void Sample1App::Render() {
 
 	draw->End();
 
+	draw->SingleDrawTex(350, 80, 260, 260, tex1, 1, 1, 1, 1);
+
 	//printf("R:%d \n", Utils::rand(50, 100));
 
 };
