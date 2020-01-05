@@ -43,6 +43,30 @@
     <Filter Include="Source Files\Util">
       <UniqueIdentifier>{ce0fd4f7-059c-4d60-9dfc-ef1c2dae071a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{9edb335b-670f-4831-9b78-29bb16985dc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{ce85f091-eba0-4c9f-99f7-302e4daf4892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Events">
+      <UniqueIdentifier>{4da329bc-9475-4de1-a00c-0a7dee0a38b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NewFilter1">
+      <UniqueIdentifier>{934ad13d-0b84-40e3-97a9-7b9513096954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Controls">
+      <UniqueIdentifier>{8930f5ac-e034-48bc-90ab-3cf7e96ca9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Controls">
+      <UniqueIdentifier>{eb791c6d-892d-423b-8a0d-6c5b5a6d30f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Themes">
+      <UniqueIdentifier>{1061d98c-62f9-434b-b4a2-d2f37a07d1d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Themes">
+      <UniqueIdentifier>{e816c371-f5ab-4f8d-a919-e722766f9537}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -72,6 +96,27 @@
     <ClInclude Include="Utils.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIControl.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIEvent.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIEventClick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UITheme.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITheme_Neon.h">
+      <Filter>Header Files\UI\Themes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TrinityEngine.cpp">
@@ -97,6 +142,27 @@
     </ClCompile>
     <ClCompile Include="Utils.cpp">
       <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIControl.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIEvent.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIEventClick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UITheme.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITheme_Neon.cpp">
+      <Filter>Source Files\UI\Themes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

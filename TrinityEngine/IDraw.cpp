@@ -49,13 +49,12 @@ void IDraw::End() {
 
 	for (int i = 0; i < Draws.size(); i++) {
 
-		//GLuint va;
+		GLuint va;
 
-		if (va == 0) {
 			glGenVertexArrays(1, &va);
-		//	GLuint vb;
+			GLuint vb;
 			glGenBuffers(1, &vb);
-		}
+//		}
 		DrawList* list = Draws[i];
 
 		int draw_c = list->Draws.size() * 4;
@@ -190,8 +189,8 @@ void IDraw::End() {
 		glDisableVertexAttribArray(2);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-//		glDeleteBuffers(1,&vb);
-	//	glDeleteVertexArrays(1, &va);
+		glDeleteBuffers(1,&vb);
+		glDeleteVertexArrays(1, &va);
 
 		
 
@@ -234,7 +233,7 @@ void IDraw::DrawTex(int x, int y, int w, int h, Texture2D* tex, float r, float g
 
 	info->x[0] = x;
 	info->x[1] = x + w;
-	info->x[2] = x + h;
+	info->x[2] = x + w;
 	info->x[3] = x;
 
 	info->y[0] = y;

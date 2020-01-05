@@ -1,11 +1,19 @@
 #include "pch.h"
 #include "Application.h"
+#include "UI.h"
 
 Application::Application() {
 
 	Window = NULL;
 
 };
+
+static void cursor_callback(GLFWwindow* win, double xpos, double ypos)
+{
+
+	UI::SetMouse((int)xpos, (int)ypos, 0);
+
+}
 
 void Application::CrWindow(int w, int h, const char* title) {
 
@@ -27,8 +35,8 @@ void Application::CrWindow(int w, int h, const char* title) {
 	WinWidth = w;
 	WinHeight = h;
 
-
-
+	glfwSetCursorPosCallback(Window, cursor_callback);
+	glfwSetInputMode(Window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 };
 
 int Application::Width() {
