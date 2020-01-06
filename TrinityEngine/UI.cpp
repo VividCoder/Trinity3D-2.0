@@ -38,6 +38,17 @@ void UI::Update() {
 	//return;
 	UpdateControl(UIRoot);
 
+	if (UIPressed != NULL) {
+
+		if (B1 == 0) {
+
+			UIPressed->MouseUp(0);
+			UIPressed = NULL;
+
+		}
+
+	}
+
 };
 
 bool UI::UpdateControl(UIControl* control) {
@@ -67,16 +78,39 @@ bool UI::UpdateControl(UIControl* control) {
 			control->MouseEnter();
 			UIOver = control;
 		}
+
+		if (B1) {
+			
+			if (UIPressed == NULL) {
+				UIPressed = UIOver;
+				UIOver->MouseDown(0);
+			}
+
+		}
+		else {
+			if (UIPressed == control) {
+				control->MouseUp(0);
+				UIPressed = NULL;
+			}
+		}
+
 		return true;
 
 	}
 	else {
 
-		if (control == UIOver) {
+		if (control == UIOver && control!=UIOver) {
 			UIOver = NULL;
 			control->MouseLeave();
 		}
+		if (UIPressed == control) {
 
+			if (B1 == false) {
+				control->MouseUp(0);
+				UIPressed = NULL;
+			}
+
+		}
 	}
 
 };
@@ -122,6 +156,24 @@ void UI::SetMouse(int x, int y, int z) {
 
 }
 
+void UI::SetMouseBut(int id, bool state) {
+
+	if (id == 0) {
+		B1 = state;
+	}
+	if (id == 1) {
+		B2 = state;
+	}
+	if (id == 2) {
+		B3 = state;
+	}
+
+};
+
 int UI::MouseX = 0;
 int UI::MouseY = 0;
 int UI::MouseZ = 0;
+
+bool UI::B1 = false;
+bool UI::B2 = false;
+bool UI::B3 = false;

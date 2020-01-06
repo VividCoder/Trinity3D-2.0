@@ -21,12 +21,14 @@ public:
 	static UITheme* Theme;
 	static void SetTheme(UITheme* theme);
 	static void SetMouse(int mx, int my, int mz);
+	static void SetMouseBut(int id, bool state);
 
 private:
 
 	UIControl* UIRoot;
 	Texture2D* CursorTex;
 	static int MouseX, MouseY, MouseZ;
+	static bool B1, B2, B3;
 	UIControl* UIOver;
 	UIControl* UIActive;
 	UIControl* UIPressed;

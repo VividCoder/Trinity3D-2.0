@@ -15,6 +15,29 @@ static void cursor_callback(GLFWwindow* win, double xpos, double ypos)
 
 }
 
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+	bool lb, rb, mb;
+	lb = false;
+	rb = false;
+	mb = false;
+
+	if (button == GLFW_MOUSE_BUTTON_LEFT) {
+
+		if (action == GLFW_PRESS) {
+			lb = true;
+		}
+		else {
+			lb = false;
+		}
+
+		UI::SetMouseBut(0, lb);
+
+	}
+
+
+}
+
 void Application::CrWindow(int w, int h, const char* title) {
 
 	glfwInit();
@@ -37,6 +60,9 @@ void Application::CrWindow(int w, int h, const char* title) {
 
 	glfwSetCursorPosCallback(Window, cursor_callback);
 	glfwSetInputMode(Window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+
+	glfwSetMouseButtonCallback(Window, mouse_button_callback);
+
 };
 
 int Application::Width() {

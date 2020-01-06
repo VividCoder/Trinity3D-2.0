@@ -28,3 +28,13 @@ void ButtonControl::MouseLeave() {
 	Over = false;
 
 };
+
+void ButtonControl::MouseDown(int b) {
+	//exit(1);
+	Pressed = true;
+};
+
+void ButtonControl::MouseUp(int b) {
+	//exit(1);
+	Pressed = false;
+}

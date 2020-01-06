@@ -10,6 +10,8 @@ public:
 	void Render();
 	void MouseEnter();
 	void MouseLeave();
+	void MouseDown(int b);
+	void MouseUp(int b);
 
 private:
 	bool Over, Pressed;
