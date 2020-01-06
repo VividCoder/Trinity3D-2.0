@@ -186,16 +186,20 @@
     <ClInclude Include="FXImageDraw.h" />
     <ClInclude Include="IDraw.h" />
     <ClInclude Include="kEffect.h" />
+    <ClInclude Include="kFont.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="stb_truetype.h" />
     <ClInclude Include="Texture2D.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIControl.h" />
     <ClInclude Include="UIEvent.h" />
     <ClInclude Include="UIEventClick.h" />
+    <ClInclude Include="UIFont.h" />
     <ClInclude Include="UITheme.h" />
     <ClInclude Include="UITheme_Neon.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="WindowControl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
@@ -203,6 +207,7 @@
     <ClCompile Include="FXImageDraw.cpp" />
     <ClCompile Include="IDraw.cpp" />
     <ClCompile Include="kEffect.cpp" />
+    <ClCompile Include="kFont.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -215,9 +220,11 @@
     <ClCompile Include="UIControl.cpp" />
     <ClCompile Include="UIEvent.cpp" />
     <ClCompile Include="UIEventClick.cpp" />
+    <ClCompile Include="UIFont.cpp" />
     <ClCompile Include="UITheme.cpp" />
     <ClCompile Include="UITheme_Neon.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="WindowControl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

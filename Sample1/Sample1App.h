@@ -3,6 +3,7 @@
 #include "UI.h"
 #include "UIControl.h"
 #include "ButtonControl.h"
+#include "WindowControl.h"
 
 class Texture2D;
 class IDraw;
@@ -26,5 +27,7 @@ private:
 	UI* ui;
 	ButtonControl* b1;
 	ButtonControl* b2;
+	WindowControl* win1;
+	WindowControl* win2;
 };
 

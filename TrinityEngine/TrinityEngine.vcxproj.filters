@@ -67,6 +67,12 @@
     <Filter Include="Source Files\UI\Themes">
       <UniqueIdentifier>{e816c371-f5ab-4f8d-a919-e722766f9537}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Font">
+      <UniqueIdentifier>{4398da44-4e19-442d-abc6-a1867c27b81b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Font">
+      <UniqueIdentifier>{ab37cb03-4bc2-43f2-b20d-ac2ce4234957}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -117,6 +123,18 @@
     <ClInclude Include="UITheme_Neon.h">
       <Filter>Header Files\UI\Themes</Filter>
     </ClInclude>
+    <ClInclude Include="stb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIFont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kFont.h">
+      <Filter>Header Files\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TrinityEngine.cpp">
@@ -163,6 +181,15 @@
     </ClCompile>
     <ClCompile Include="UITheme_Neon.cpp">
       <Filter>Source Files\UI\Themes</Filter>
+    </ClCompile>
+    <ClCompile Include="UIFont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="kFont.cpp">
+      <Filter>Source Files\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowControl.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,6 +5,32 @@
 #include "stb_image.h"
 #include <GL/glew.h>
 
+Texture2D::Texture2D(unsigned char* data, int w, int h) {
+
+
+	Width = (int)w;
+	Height = (int)h;
+
+
+
+
+	glGenTextures(1, &ID);
+
+
+
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ID);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+}
+
 Texture2D::Texture2D(const char* path,bool alpha) {
 
 	int iw, ih, bpp;

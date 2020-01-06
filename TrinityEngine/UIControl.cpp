@@ -5,6 +5,7 @@ UIControl::UIControl() {
 
 	Controls.resize(0);
 	actionPtr = NULL;
+	actOne = NULL;
 	X = 0;
 	Y = 0;
 	W = 0;
@@ -19,8 +20,11 @@ UIControl* UIControl::Set(int x, int y, int w, int h) {
 	Y = y;
 	W = w;
 	H = h;
+	
+	Resized();
 	return this;
 }
+
 
 UIControl* UIControl::SetText(const char* text) {
 
@@ -111,10 +115,18 @@ bool UIControl::InBounds(int x, int y) {
 	return false;
 };
 
+void UIControl::SetAction(void (*action)()) {
+
+	actionPtr = action;
+
+};
+
 void UIControl::Action() {
 
 	if (actionPtr != NULL) {
 		actionPtr();
 	}
-
+	if (actOne != NULL) {
+		actOne();
+	}
 };

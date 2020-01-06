@@ -4,6 +4,7 @@
 class IDraw;
 class Texture2D;
 class UITheme;
+class kFont;
 
 class UI
 {
@@ -23,8 +24,15 @@ public:
 	static void SetMouse(int mx, int my, int mz);
 	static void SetMouseBut(int id, bool state);
 
+	static kFont* UIFont;
+
+	static void DrawText(int x, int y, const char* text, float r, float g, float b, float a);
+	static int TextWidth(const char* text);
+	static int TextHeight(const char* text);
+
 private:
 
+	
 	UIControl* UIRoot;
 	Texture2D* CursorTex;
 	static int MouseX, MouseY, MouseZ;

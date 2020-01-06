@@ -3,6 +3,7 @@
 #include "IDraw.h"
 #include "Texture2D.h"
 #include "UITheme.h"
+#include "kFont.h"
 UI::UI(int w,int h) {
 
 	UIRoot = new UIControl();
@@ -16,6 +17,8 @@ UI::UI(int w,int h) {
 	UIPressed = NULL;
 	UIActive = NULL;
 	PressedBut = -1;
+	UIFont = new kFont("Data/font/font.pf");
+
 }
 
 IDraw * UI::Drawer = NULL;
@@ -48,6 +51,20 @@ void UI::Update() {
 		}
 
 	}
+
+	if (UIOver != NULL) {
+
+		if (UIPressed != UIOver) {
+
+			if (!UIOver->InBounds(MouseX, MouseY))
+			{
+				UIOver->MouseLeave();
+				UIOver = NULL;
+
+			}
+		}
+
+	};
 
 };
 
@@ -117,7 +134,7 @@ bool UI::UpdateControl(UIControl* control) {
 
 void UI::DrawTexture(Texture2D* tex, int x, int y, int w, int h, float r, float g, float b, float a) {
 
-	printf("X:%d Y:%d W:%d H:%d \n",x,y,w,h);
+	//printf("X:%d Y:%d W:%d H:%d \n",x,y,w,h);
 	Drawer->DrawTex(x, y, w, h, tex, r, g, b, a);
 
 };
@@ -177,3 +194,23 @@ int UI::MouseZ = 0;
 bool UI::B1 = false;
 bool UI::B2 = false;
 bool UI::B3 = false;
+
+kFont* UI::UIFont = NULL;
+
+void UI::DrawText(int x, int y, const char* txt, float r, float g, float b, float a) {
+
+	UIFont->drawText(txt, x, y, r, g, b, a);
+
+};
+
+int UI::TextWidth(const char* text) {
+
+	return UIFont->getWidth(text);
+
+}
+
+int UI::TextHeight(const char* text) {
+
+	return UIFont->getHeight();
+
+};

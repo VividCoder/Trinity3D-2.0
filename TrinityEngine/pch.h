@@ -19,5 +19,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
-
+#include <functional>
+#include <cmath>
 #endif //PCH_H

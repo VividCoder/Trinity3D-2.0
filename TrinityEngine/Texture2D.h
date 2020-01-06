@@ -6,6 +6,7 @@ class Texture2D
 public:
 
 	Texture2D(const char* path,bool alpha);
+	Texture2D(unsigned char* data, int w, int h);
 	void Bind(int unit);
 	void Release(int unit);
 	int GetWidth();
