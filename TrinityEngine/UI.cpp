@@ -2,6 +2,7 @@
 #include "UI.h"
 #include "IDraw.h"
 #include "Texture2D.h"
+#include "UITheme.h"
 UI::UI(int w,int h) {
 
 	UIRoot = new UIControl();
@@ -11,10 +12,20 @@ UI::UI(int w,int h) {
 	MouseX = 10;
 	MouseY = 10;
 	MouseZ = 0;
+	UIOver = NULL;
+	UIPressed = NULL;
+	UIActive = NULL;
+	PressedBut = -1;
 }
 
 IDraw * UI::Drawer = NULL;
 
+UITheme* UI::Theme = NULL;
+
+
+void UI::SetTheme(UITheme* theme) {
+	UI::Theme = theme;
+}
 
 UIControl* UI::GetRoot() {
 
@@ -23,6 +34,50 @@ UIControl* UI::GetRoot() {
 }
 
 void UI::Update() {
+
+	//return;
+	UpdateControl(UIRoot);
+
+};
+
+bool UI::UpdateControl(UIControl* control) {
+
+	for (int i = 0; i < control->ControlsCount(); i++) {
+
+		int reali = control->ControlsCount() - (i + 1);
+		if (UpdateControl(control->GetControl(reali))) {
+			return true;
+		}
+
+	}
+
+	control->Update();
+	if (control->InBounds(MouseX, MouseY))
+	{
+	  
+		if (UIOver != NULL) {
+			if (UIOver != control) {
+				UIOver->MouseLeave();
+				UIOver = control;
+				UIOver->MouseEnter();
+
+			}
+		}
+		else {
+			control->MouseEnter();
+			UIOver = control;
+		}
+		return true;
+
+	}
+	else {
+
+		if (control == UIOver) {
+			UIOver = NULL;
+			control->MouseLeave();
+		}
+
+	}
 
 };
 

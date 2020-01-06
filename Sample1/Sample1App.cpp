@@ -3,7 +3,7 @@
 #include "Texture2D.h"
 #include "IDraw.h"
 #include "Utils.h"
-
+#include "UITheme_Neon.h"
 
 Sample1App::Sample1App() {
 
@@ -12,6 +12,11 @@ Sample1App::Sample1App() {
 
 void Sample1App::Init() {
 
+
+	UITheme_Neon* theme = new UITheme_Neon();
+	
+	UI::SetTheme(theme);
+
 	tex1 = new Texture2D("Data/Test/logo1.png", true);
 	tex2 = new Texture2D("Data/TEst/button1.png", true);
 	draw = new IDraw(Width(),Height());
@@ -19,7 +24,7 @@ void Sample1App::Init() {
 	ui = new UI(Width(),Height());
 
 	b1 = (ButtonControl*)new ButtonControl();
-	b1->Set(20, 20, 200, 30)->SetText("Test");
+	b1->Set(20, 20, 300, 300)->SetText("Test");
 
 	b2 = new ButtonControl();
 	b2->Set(20, 100, 150, 40)->SetText("New");

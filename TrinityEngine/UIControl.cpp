@@ -96,6 +96,21 @@ int UIControl::GetH() {
 
 };
 
+const char* UIControl::GetText() {
+
+	return Text;
+
+};
+
+bool UIControl::InBounds(int x, int y) {
+
+	if (x >= GetX() && y >= GetY() && x <= (GetX() + GetW()) && y <= (GetY() + GetH()))
+	{
+		return true;
+	}
+	return false;
+};
+
 void UIControl::Action() {
 
 	if (actionPtr != NULL) {
