@@ -191,7 +191,9 @@
     <ClInclude Include="kEffect.h" />
     <ClInclude Include="kFont.h" />
     <ClInclude Include="kFrameBuffer.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MapEditControl.h" />
+    <ClInclude Include="MapTile.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_truetype.h" />
@@ -218,7 +220,9 @@
     <ClCompile Include="kEffect.cpp" />
     <ClCompile Include="kFont.cpp" />
     <ClCompile Include="kFrameBuffer.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapEditControl.cpp" />
+    <ClCompile Include="MapTile.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
