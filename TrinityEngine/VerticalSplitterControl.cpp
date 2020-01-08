@@ -53,7 +53,7 @@ void VerticalSplitterControl::MouseMove(int x, int y, int mx, int my) {
 
 	if (!Dragging) {
 
-		if (x>=GetX() && y<=GetX()+GetW()) {
+		if (x>=GetX() && x<=GetX()+GetW()) {
 			if (y >= (GetY()+SplitPos-4) && y<= (GetY()+SplitPos+4))
 			{
 				OverDrag = true;
@@ -71,12 +71,12 @@ void VerticalSplitterControl::MouseMove(int x, int y, int mx, int my) {
 	else {
 
 		SplitPos += my;
-		if (SplitPos < 5) {
-			SplitPos = 5;
+		if (SplitPos < 10) {
+			SplitPos = 10;
 		}
 		if (SplitPos > (GetH() - 5))
 		{
-			SplitPos = GetH() - 5;
+			SplitPos = GetH() - 10;
 		}
 		Resized();
 

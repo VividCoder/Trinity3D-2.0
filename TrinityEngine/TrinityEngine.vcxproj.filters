@@ -126,23 +126,23 @@
     <ClInclude Include="stb_truetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UIFont.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="kFont.h">
       <Filter>Header Files\Font</Filter>
     </ClInclude>
     <ClInclude Include="WindowControl.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="ImageControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="HorizontalSplitterControl.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
     <ClInclude Include="VerticalSplitterControl.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="UIFont.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -191,23 +191,23 @@
     <ClCompile Include="UITheme_Neon.cpp">
       <Filter>Source Files\UI\Themes</Filter>
     </ClCompile>
-    <ClCompile Include="UIFont.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="kFont.cpp">
       <Filter>Source Files\Font</Filter>
     </ClCompile>
     <ClCompile Include="WindowControl.cpp">
       <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
-    <ClCompile Include="ImageControl.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="VerticalSplitterControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
     <ClCompile Include="HorizontalSplitterControl.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
-    <ClCompile Include="VerticalSplitterControl.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ImageControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIFont.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
