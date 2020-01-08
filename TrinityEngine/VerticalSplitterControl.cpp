@@ -21,8 +21,9 @@ void VerticalSplitterControl::Resized() {
 void VerticalSplitterControl::Render() {
 
 
-	UI::Theme->DrawFrame(GetX(), GetY(), GetW(), SplitPos - 4,0.6f,0.8f,0.8f,1.0f);
-	UI::Theme->DrawFrame(GetY(), GetY() + SplitPos + 4, GetW(), GetH() - (SplitPos + 4),0.6f,0.8f,0.8f,1);
+	//UI::Theme->DrawFrame(GetX(), GetY(), GetW(), SplitPos - 4,0.6f,0.8f,0.8f,1.0f);
+	UI::Theme->DrawFrame(GetX(), GetY() + SplitPos - 4, GetW(), 8, 2,2, 2, 1);
+//	UI::Theme->DrawFrame(GetY(), GetY() + SplitPos + 4, GetW(), GetH() - (SplitPos + 4),0.6f,0.8f,0.8f,1);
 
 	//UI::Theme->DrawFrame(GetX(), GetY()+SplitPos-4, GetW(), GetY()+SplitPos+4, 0.8f, 0.8f, 0.8f, 1);
 	//UI::Theme->DrawFrame(SplitPos + 4, GetY(), GetW() - (SplitPos + 4), GetH(), 0.8f, 0.8f, 0.8f, 1);

@@ -20,7 +20,10 @@ public:
 		AddControl(bottom);
 
 	};
-
+	void SetSplit(int split) {
+		SplitPos = split;
+		Resized();
+	}
 	void MouseDown(int b);
 	void MouseUp(int b);
 	void MouseMove(int x, int y, int dx, int dy);

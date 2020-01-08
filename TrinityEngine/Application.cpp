@@ -78,7 +78,7 @@ void Application::Run() {
 
 	Init();
 
-	glClearColor(0, 1, 1, 1.0f);
+	glClearColor(0, 0,0, 1.0f);
 
 	double prev_time = glfwGetTime();
 	int framec = 0;
