@@ -5,6 +5,7 @@
 #include "Utils.h"
 #include "UITheme_Neon.h"
 #include "ImageControl.h"
+#include "VerticalSplitterControl.h"
 #include "HorizontalSplitterControl.h"
 Sample1App::Sample1App() {
 
@@ -31,6 +32,7 @@ void Sample1App::Init() {
 	ImageControl* bg = new ImageControl("Data/UI/Bg/bg1.png", true);
 
 	HorizontalSplitterControl* s1 = new HorizontalSplitterControl();
+	VerticalSplitterControl* s2 = new VerticalSplitterControl();
 
 	s1->Set(0, 0, 800, 600);
 
@@ -66,7 +68,9 @@ void Sample1App::Init() {
 	bg->SetSize(800, 600);
 
 	ui->GetRoot()->AddControl(s1);
-	s1->SetLeft(win1);
+	s1->SetLeft(s2);
+	s2->SetTop(win1);
+	
 	s1->SetRight(b2);
 	//ui->GetRoot()->AddControl(b2);
 

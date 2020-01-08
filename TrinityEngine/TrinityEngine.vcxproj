@@ -201,6 +201,7 @@
     <ClInclude Include="UITheme.h" />
     <ClInclude Include="UITheme_Neon.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="VerticalSplitterControl.h" />
     <ClInclude Include="WindowControl.h" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +229,7 @@
     <ClCompile Include="UITheme.cpp" />
     <ClCompile Include="UITheme_Neon.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="VerticalSplitterControl.cpp" />
     <ClCompile Include="WindowControl.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

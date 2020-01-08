@@ -65,7 +65,16 @@ void HorizontalSplitterControl::MouseMove(int x, int y, int mx, int my) {
 	else {
 
 		SplitPos += mx;
+		if (SplitPos < 10)
+		{
+			SplitPos = 10;
+		}
+		if (SplitPos > (GetW() - 10)) {
+			SplitPos = GetW() - 10;
+		}
+
 		Resized();
+
 
 	}
 
