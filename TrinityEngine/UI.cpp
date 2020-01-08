@@ -76,6 +76,22 @@ void UI::Update() {
 
 	}
 
+	if (UIPressed != NULL) {
+		int mx = UI::MouseX - UIOver->GetX();
+		int my = UI::MouseY - UIOver->GetY();
+		UIPressed->MouseMove(mx,my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
+
+	}
+	else if (UIOver != NULL) {
+
+		int mx = UI::MouseX - UIOver->GetX();
+		int my = UI::MouseY - UIOver->GetY();
+
+		UIOver->MouseMove(mx,my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
+
+
+	}
+
 	UI::LastX = UI::MouseX;
 	UI::LastY = UI::MouseY;
 };

@@ -11,6 +11,7 @@ public:
 	virtual void MouseLeave() {};
 	virtual void MouseDown(int button) {  };
 	virtual void MouseUp(int button) {};
+	virtual void MouseMove(int x, int y, int dx, int dy) {};
 	virtual void Resized() {};
 	void Action();
 	UIControl * Set(int x, int y, int w, int h);

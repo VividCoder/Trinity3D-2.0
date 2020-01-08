@@ -184,6 +184,7 @@
     <ClInclude Include="ButtonControl.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FXImageDraw.h" />
+    <ClInclude Include="HorizontalSplitterControl.h" />
     <ClInclude Include="IDraw.h" />
     <ClInclude Include="ImageControl.h" />
     <ClInclude Include="kEffect.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="ButtonControl.cpp" />
     <ClCompile Include="FXImageDraw.cpp" />
+    <ClCompile Include="HorizontalSplitterControl.cpp" />
     <ClCompile Include="IDraw.cpp" />
     <ClCompile Include="ImageControl.cpp" />
     <ClCompile Include="kEffect.cpp" />
