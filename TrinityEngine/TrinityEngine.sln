@@ -18,7 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{86447866-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{B3594AF0-A057-488A-A3B8-C725343BD398}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScopeNine", "..\Games\ScopeNine\ScopeNine.vcxproj", "{B3FB6B68-D144-4EF8-BF42-37AF255458A6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScopeNineEditor", "..\Games\ScopeNine\ScopeNine.vcxproj", "{B3FB6B68-D144-4EF8-BF42-37AF255458A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4345B147-2DD9-4D8E-AF67-8E47B82E79F3} = {4345B147-2DD9-4D8E-AF67-8E47B82E79F3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

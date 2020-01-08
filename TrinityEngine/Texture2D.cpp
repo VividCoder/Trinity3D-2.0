@@ -31,6 +31,26 @@ Texture2D::Texture2D(unsigned char* data, int w, int h) {
 
 }
 
+Texture2D::Texture2D(int w, int h) {
+
+	Width = w;
+	Height = h;
+
+	glGenTextures(1, &ID);
+
+
+
+	glEnable(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, ID);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+
+};
+
 Texture2D::Texture2D(const char* path,bool alpha) {
 
 	int iw, ih, bpp;
@@ -76,6 +96,13 @@ Texture2D::Texture2D(const char* path,bool alpha) {
 	Height = ih;
 
 	Alpha = alpha;
+
+};
+
+Texture2D::~Texture2D() {
+
+	glDeleteTextures(1, &ID);
+
 
 };
 

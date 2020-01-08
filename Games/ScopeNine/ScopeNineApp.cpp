@@ -38,9 +38,11 @@ void ScopeNineApp::Init()
 	Split1->SetSplit(Height() - 150);
 
 	Split2->SetSplit(200);
-	Split3->SetSplit(450);
+	Split3->SetSplit(850);
 
-	Split3->SetLeft(b);
+	Edit1 = new MapEditControl();
+
+	Split3->SetLeft(Edit1);
 
 	ui->GetRoot()->AddControl(Split1);
 

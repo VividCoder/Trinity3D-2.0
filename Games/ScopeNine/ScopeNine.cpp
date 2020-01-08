@@ -7,7 +7,7 @@ int main()
 {
     std::cout << "Hello World!\n";
     ScopeNineApp* app = new ScopeNineApp();
-    app->CrWindow(800, 600, "Sample 1 - TrinityEngine");
+    app->CrWindow(1300, 768, "Sample 1 - TrinityEngine");
 
     app->Run();
 }

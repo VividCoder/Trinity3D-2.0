@@ -6,6 +6,7 @@
 #include "WindowControl.h"
 #include "VerticalSplitterControl.h"
 #include "HorizontalSplitterControl.h"
+#include "MapEditControl.h"
 
 class Texture2D;
 class IDraw;
@@ -25,6 +26,7 @@ private:
 	VerticalSplitterControl* Split1;
 	HorizontalSplitterControl* Split2;
 	HorizontalSplitterControl* Split3;
+	MapEditControl* Edit1;
 	UI* ui;
 
 };

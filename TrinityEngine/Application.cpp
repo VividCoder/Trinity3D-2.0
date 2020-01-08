@@ -57,6 +57,10 @@ void Application::CrWindow(int w, int h, const char* title) {
 
 	WinWidth = w;
 	WinHeight = h;
+	RenW = w;
+	RenH = h;
+	WinW = w;
+	WinH = h;
 
 	glfwSetCursorPosCallback(Window, cursor_callback);
 	glfwSetInputMode(Window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
@@ -64,6 +68,26 @@ void Application::CrWindow(int w, int h, const char* title) {
 	glfwSetMouseButtonCallback(Window, mouse_button_callback);
 
 };
+
+ int Application::RenW = 0;
+ int Application::RenH = 0;
+ int Application::WinW = 0;
+ int Application::WinH = 0;
+
+
+ void Application::SetRen(int w, int h) {
+
+	 RenW = w;
+	 RenH = h;
+
+ };
+
+ void Application::ResetRen() {
+
+	 RenW = WinW;
+	 RenH = WinH;
+
+ }
 
 int Application::Width() {
 	return WinWidth;

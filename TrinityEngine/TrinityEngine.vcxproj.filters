@@ -73,6 +73,12 @@
     <Filter Include="Source Files\Font">
       <UniqueIdentifier>{ab37cb03-4bc2-43f2-b20d-ac2ce4234957}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\FrameBuffer">
+      <UniqueIdentifier>{bdff8f26-37e9-40f1-8da2-dd41fb721dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameBuffer">
+      <UniqueIdentifier>{175cfea2-bdd4-428e-a55e-29b61506d69f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -144,6 +150,15 @@
     <ClInclude Include="UIFont.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="kFrameBuffer.h">
+      <Filter>Header Files\FrameBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBufferControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEditControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TrinityEngine.cpp">
@@ -208,6 +223,15 @@
     </ClCompile>
     <ClCompile Include="UIFont.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="kFrameBuffer.cpp">
+      <Filter>Source Files\FrameBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBufferControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditControl.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
