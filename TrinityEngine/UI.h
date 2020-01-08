@@ -41,6 +41,7 @@ private:
 	UIControl* UIActive;
 	UIControl* UIPressed;
 	int PressedBut;
+	static int LastX, LastY;
 
 
 };

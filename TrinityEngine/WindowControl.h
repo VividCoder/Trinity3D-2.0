@@ -13,8 +13,13 @@ public:
 
 	void Resized();
 
+	void AddBodyControl(UIControl* control) {
+		Body->AddControl(control);
+	}
+
 private:
 	ButtonControl* Title;
-
+	ButtonControl* Resize;
+	UIControl* Body;
 };
 

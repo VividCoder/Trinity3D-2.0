@@ -133,6 +133,9 @@
       <Filter>Header Files\Font</Filter>
     </ClInclude>
     <ClInclude Include="WindowControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -189,6 +192,9 @@
       <Filter>Source Files\Font</Filter>
     </ClCompile>
     <ClCompile Include="WindowControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

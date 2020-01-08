@@ -6,6 +6,7 @@ UIControl::UIControl() {
 	Controls.resize(0);
 	actionPtr = NULL;
 	actOne = NULL;
+	actDrag = NULL;
 	X = 0;
 	Y = 0;
 	W = 0;

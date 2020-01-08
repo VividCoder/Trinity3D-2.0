@@ -10,13 +10,15 @@ UI::UI(int w,int h) {
 
 	Drawer = new IDraw(w, h);
 	CursorTex = new Texture2D("Data/UI/Neon/cursor1.png", true);
-	MouseX = 10;
-	MouseY = 10;
+	MouseX = 1;
+	MouseY = 1;
 	MouseZ = 0;
 	UIOver = NULL;
 	UIPressed = NULL;
 	UIActive = NULL;
 	PressedBut = -1;
+	LastX = 0;
+	LastY = 0;
 	UIFont = new kFont("Data/font/font.pf");
 
 }
@@ -66,6 +68,16 @@ void UI::Update() {
 
 	};
 
+	if (UIPressed != NULL) {
+
+		int xd = UI::MouseX - UI::LastX;
+		int yd = UI::MouseY - UI::LastY;
+		UIPressed->Dragged(xd, yd);
+
+	}
+
+	UI::LastX = UI::MouseX;
+	UI::LastY = UI::MouseY;
 };
 
 bool UI::UpdateControl(UIControl* control) {
@@ -167,6 +179,8 @@ void UI::RenderControl(UIControl * control) {
 
 void UI::SetMouse(int x, int y, int z) {
 
+	UI::LastX = UI::MouseX;
+	UI::LastY = UI::MouseY;
 	UI::MouseX = x;
 	UI::MouseY = y;
 	UI::MouseZ = z;
@@ -190,6 +204,8 @@ void UI::SetMouseBut(int id, bool state) {
 int UI::MouseX = 0;
 int UI::MouseY = 0;
 int UI::MouseZ = 0;
+int UI::LastX = 0;
+int UI::LastY = 0;
 
 bool UI::B1 = false;
 bool UI::B2 = false;
