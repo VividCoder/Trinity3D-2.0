@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "kFrameBuffer.h"
+#include "Application.h"
 
 kFrameBuffer::kFrameBuffer(int w,int h) {
 
@@ -51,13 +52,16 @@ void kFrameBuffer::bind() {
 	glViewport(0, 0, fW, fH);
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	Application::SetRen(fW, fH);
 
 }
 
 void kFrameBuffer::unbind() {
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	Application::ResetRen();
 }
+
 
 Texture2D * kFrameBuffer::GetBB() {
 

@@ -2,6 +2,7 @@
 #include "IDraw.h"
 #include "Texture2D.h"
 #include "FXImageDraw.h"
+#include "Application.h"
 
 IDraw::IDraw(int w,int h) {
 
@@ -41,7 +42,7 @@ void IDraw::End() {
 
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glViewport(0, 0, dw, dh);
+	glViewport(0, 0, Application::RenW, Application::RenH);
 	glClearDepth(1.0f);
 	glDepthFunc(GL_LESS);
 	fx->bind();

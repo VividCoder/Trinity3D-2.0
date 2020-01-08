@@ -32,7 +32,7 @@ void FrameBufferControl::Render() {
 	Buffer->unbind();
 
 
-	Draw->SingleDrawTex(GetX(), GetY(), GetW(), GetH(), Buffer->GetBB(), 1, 1, 1, 1);
+	Draw->SingleDrawTex(GetX(), GetY()+GetH(), GetW(), -GetH(), Buffer->GetBB(), 1, 1, 1, 1);
 
 
 }

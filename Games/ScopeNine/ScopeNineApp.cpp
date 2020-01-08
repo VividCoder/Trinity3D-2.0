@@ -40,7 +40,7 @@ void ScopeNineApp::Init()
 	Split2->SetSplit(200);
 	Split3->SetSplit(850);
 
-	Edit1 = new MapEditControl(64,64,64,64);
+	Edit1 = new MapEditControl(4,4,64,64);
 
 	Split3->SetLeft(Edit1);
 

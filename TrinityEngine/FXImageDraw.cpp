@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "FXImageDraw.h"
-
+#include "Application.h"
 FXImageDraw::FXImageDraw(int w,int h) {
 
 	load("Data/Shader/2D/drawVS1.glsl", "Data/Shader/2D/drawFS1.glsl");
@@ -10,6 +10,8 @@ FXImageDraw::FXImageDraw(int w,int h) {
 
 void FXImageDraw::setPars() {
 
+	pw = Application::RenW;
+	ph = Application::RenH;
 	glm::mat4 pMat = glm::ortho((float)0, (float)pw, (float)ph, (float)0, (float)-100, (float)100);
 
 
