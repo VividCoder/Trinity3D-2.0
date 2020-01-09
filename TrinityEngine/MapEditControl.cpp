@@ -14,7 +14,7 @@ MapEditControl::MapEditControl(int mw, int mh, int tw, int th) {
 
 		for (int x = 0; x < mw; x++) {
 
-			CurMap->SetTile(x, y,0, noTile);
+			//CurMap->SetTile(x, y,0, noTile);
 
 		}
 	}
@@ -42,8 +42,20 @@ void MapEditControl::MouseUp(int b) {
 void MapEditControl::MouseMove(int x, int y, int dx, int dy)
 {
 	if (Dragging) {
-		CurMap->Move(dx, dy);
+		CurMap->Move(-dx, -dy);
 	}
+
+	CurMap->ClearHighlight();
+
+	TileInfo* info = CurMap->TileAt(x, y);
+
+	if (info->TileX != -1) {
+
+		CurMap->SetHighlight(info->TileX, info->TileY, true);
+		//printf("HX:%d HY:%d\n MX:%d\n", info->TileX, info->TileY, x);
+	}
+
+	delete info;
 }
 
 

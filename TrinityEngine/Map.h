@@ -7,6 +7,13 @@ const int MAX_W = 512;
 const int MAX_H = 512;
 const int MAX_D = 8;
 
+struct TileInfo {
+
+	int TileX, TileY, TileZ;
+	MapTile* Tile[16];
+
+};
+
 class Map
 {
 public:
@@ -25,6 +32,10 @@ public:
 		CamY += y;
 
 	}
+
+	TileInfo* TileAt(int x, int y);
+
+	void ClearHighlight();
 
 	void Render();
 

@@ -191,6 +191,7 @@
     <ClInclude Include="kEffect.h" />
     <ClInclude Include="kFont.h" />
     <ClInclude Include="kFrameBuffer.h" />
+    <ClInclude Include="MainMenuControl.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapEditControl.h" />
     <ClInclude Include="MapTile.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="kEffect.cpp" />
     <ClCompile Include="kFont.cpp" />
     <ClCompile Include="kFrameBuffer.cpp" />
+    <ClCompile Include="MainMenuControl.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapEditControl.cpp" />
     <ClCompile Include="MapTile.cpp" />
