@@ -16,10 +16,16 @@ public:
 
 	void RenderBuffer();
 
+	void MouseDown(int b);
+
+	void MouseUp(int b);
+
+	void MouseMove(int x, int y, int dx, int dy);
+
 private:
 
 	Map* CurMap;
 	IDraw* Draw;
-
+	bool Dragging = false;
 };
 

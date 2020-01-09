@@ -19,6 +19,13 @@ public:
 
 	void SetHighlight(int x, int y, bool high);
 
+	void Move(float x, float y) {
+
+		CamX += x;
+		CamY += y;
+
+	}
+
 	void Render();
 
 

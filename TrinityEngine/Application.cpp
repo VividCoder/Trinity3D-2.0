@@ -34,6 +34,19 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 		UI::SetMouseBut(0, lb);
 
 	}
+	if (button == GLFW_MOUSE_BUTTON_RIGHT) {
+
+
+		if (action == GLFW_PRESS) {
+			lb = true;
+		}
+		else {
+			lb = false;
+		}
+	
+		UI::SetMouseBut(1, lb);
+
+	}
 
 
 }

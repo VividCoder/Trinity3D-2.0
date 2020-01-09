@@ -162,14 +162,14 @@
     <ClInclude Include="FrameBufferControl.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="MapEditControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="MapTile.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEditControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -242,14 +242,14 @@
     <ClCompile Include="FrameBufferControl.cpp">
       <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
-    <ClCompile Include="MapEditControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Map.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
     <ClCompile Include="MapTile.cpp">
       <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

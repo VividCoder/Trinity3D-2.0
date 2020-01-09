@@ -36,10 +36,10 @@ private:
 	UIControl* UIRoot;
 	Texture2D* CursorTex;
 	static int MouseX, MouseY, MouseZ;
-	static bool B1, B2, B3;
+	static bool But[32];
 	UIControl* UIOver;
 	UIControl* UIActive;
-	UIControl* UIPressed;
+	UIControl* UIPressed[32];
 	int PressedBut;
 	static int LastX, LastY;
 

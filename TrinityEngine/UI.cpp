@@ -14,7 +14,9 @@ UI::UI(int w,int h) {
 	MouseY = 1;
 	MouseZ = 0;
 	UIOver = NULL;
-	UIPressed = NULL;
+	for (int i = 0; i < 16; i++) {
+		UIPressed[i] = NULL;
+	}
 	UIActive = NULL;
 	PressedBut = -1;
 	LastX = 0;
@@ -43,20 +45,34 @@ void UI::Update() {
 	//return;
 	UpdateControl(UIRoot);
 
-	if (UIPressed != NULL) {
+	for (int i = 0; i < 16; i++) {
+		if (UIPressed[i] != NULL) {
 
-		if (B1 == 0) {
+			if (But[i] == false) {
 
-			UIPressed->MouseUp(0);
-			UIPressed = NULL;
+				UIPressed[i]->MouseUp(i);
+				UIPressed[i] = NULL;
+
+			}
 
 		}
-
 	}
 
 	if (UIOver != NULL) {
 
-		if (UIPressed != UIOver) {
+		bool keep = false;
+
+		for (int cx = 0; cx < 16; cx++) {
+
+			if (UIPressed[cx] == UIOver) {
+
+				keep = true;
+
+			}
+
+		}
+
+		if (!keep) {
 
 			if (!UIOver->InBounds(MouseX, MouseY))
 			{
@@ -64,31 +80,46 @@ void UI::Update() {
 				UIOver = NULL;
 
 			}
+
 		}
+
+		
 
 	};
 
-	if (UIPressed != NULL) {
+	for (int i = 0; i < 16; i++) {
+		if (UIPressed[i] != NULL) {
 
-		int xd = UI::MouseX - UI::LastX;
-		int yd = UI::MouseY - UI::LastY;
-		UIPressed->Dragged(xd, yd);
+			int xd = UI::MouseX - UI::LastX;
+			int yd = UI::MouseY - UI::LastY;
+			UIPressed[i]->Dragged(xd, yd);
 
+		}
+
+
+		if (UIPressed[i] != NULL) {
+			int mx = UI::MouseX - UIOver->GetX();
+			int my = UI::MouseY - UIOver->GetY();
+			UIPressed[i]->MouseMove(mx, my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
+
+		}
 	}
+	
+	if (UIOver != NULL) {
 
-	if (UIPressed != NULL) {
-		int mx = UI::MouseX - UIOver->GetX();
-		int my = UI::MouseY - UIOver->GetY();
-		UIPressed->MouseMove(mx,my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
+		bool dol = false;
+		for (int i = 0; i < 16; i++){
+			if (UIPressed[i] == UIOver) {
+				dol = true;
+			}
+		}
 
-	}
-	else if (UIOver != NULL) {
+		if (dol == false) {
+			int mx = UI::MouseX - UIOver->GetX();
+			int my = UI::MouseY - UIOver->GetY();
 
-		int mx = UI::MouseX - UIOver->GetX();
-		int my = UI::MouseY - UIOver->GetY();
-
-		UIOver->MouseMove(mx,my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
-
+			UIOver->MouseMove(mx, my, UI::MouseX - UI::LastX, UI::MouseY - UI::LastY);
+		}
 
 	}
 
@@ -110,7 +141,7 @@ bool UI::UpdateControl(UIControl* control) {
 	control->Update();
 	if (control->InBounds(MouseX, MouseY))
 	{
-	  
+
 		if (UIOver != NULL) {
 			if (UIOver != control) {
 				UIOver->MouseLeave();
@@ -124,37 +155,43 @@ bool UI::UpdateControl(UIControl* control) {
 			UIOver = control;
 		}
 
-		if (B1) {
-			
-			if (UIPressed == NULL) {
-				UIPressed = UIOver;
-				UIOver->MouseDown(0);
-			}
 
-		}
-		else {
-			if (UIPressed == control) {
-				control->MouseUp(0);
-				UIPressed = NULL;
+		for (int i = 0; i < 16; i++) {
+			if (But[i]) {
+
+				if (UIPressed[i] == NULL) {
+				
+					UIPressed[i] = UIOver;
+					UIOver->MouseDown(i);
+				}
+
+			}
+			else {
+				if (UIPressed[i] == control) {
+					control->MouseUp(i);
+					UIPressed[i] = NULL;
+				}
 			}
 		}
-
 		return true;
-
 	}
+	
 	else {
 
 		if (control == UIOver && control!=UIOver) {
 			UIOver = NULL;
 			control->MouseLeave();
 		}
-		if (UIPressed == control) {
 
-			if (B1 == false) {
-				control->MouseUp(0);
-				UIPressed = NULL;
+		for (int i = 0; i < 16; i++) {
+			if (UIPressed[i] == control) {
+
+				if (But[i] == false) {
+					control->MouseUp(i);
+					UIPressed[i]= NULL;
+				}
+
 			}
-
 		}
 	}
 
@@ -205,17 +242,12 @@ void UI::SetMouse(int x, int y, int z) {
 
 void UI::SetMouseBut(int id, bool state) {
 
-	if (id == 0) {
-		B1 = state;
-	}
-	if (id == 1) {
-		B2 = state;
-	}
-	if (id == 2) {
-		B3 = state;
-	}
+	But[id] = state;
+
 
 };
+
+bool UI::But[];
 
 int UI::MouseX = 0;
 int UI::MouseY = 0;
@@ -223,9 +255,8 @@ int UI::MouseZ = 0;
 int UI::LastX = 0;
 int UI::LastY = 0;
 
-bool UI::B1 = false;
-bool UI::B2 = false;
-bool UI::B3 = false;
+
+
 
 kFont* UI::UIFont = NULL;
 

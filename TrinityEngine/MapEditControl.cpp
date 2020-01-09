@@ -19,9 +19,31 @@ MapEditControl::MapEditControl(int mw, int mh, int tw, int th) {
 		}
 	}
 
-//	CurMap->SetHighlight(1, 0, true);
+	CurMap->SetHighlight(0, 0, true);
 
 
+}
+
+void MapEditControl::MouseDown(int b) {
+
+	if (b == 1) {
+		Dragging = true;
+	}
+};
+
+void MapEditControl::MouseUp(int b) {
+
+	if (b == 1) {
+		Dragging = false;
+	}
+
+};
+
+void MapEditControl::MouseMove(int x, int y, int dx, int dy)
+{
+	if (Dragging) {
+		CurMap->Move(dx, dy);
+	}
 }
 
 
