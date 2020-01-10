@@ -109,7 +109,7 @@ const char* UIControl::GetText() {
 
 bool UIControl::InBounds(int x, int y) {
 
-	if (x >= GetX() && y >= GetY() && x <= (GetX() + GetW()) && y <= (GetY() + GetH()))
+	if (x >= LocalX() && y >= LocalY() && x <= (LocalX() + GetW()) && y <= (LocalY() + GetH()))
 	{
 		return true;
 	}

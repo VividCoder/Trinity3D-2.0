@@ -1,11 +1,21 @@
 #pragma once
 #include "UIControl.h"
 #include <vector>
-
+#include <functional>
 struct MenuItem {
 
+	std::function<void()> act = NULL;
 	const char* Text;
 	std::vector<MenuItem*> Items;
+	void Action(){
+
+		act();
+
+	}
+	void SetAction(std::function<void()> action)
+	{
+		act = action;
+	}
 	MenuItem * AddItem(const char* text) {
 
 		MenuItem* item = new MenuItem;
@@ -32,6 +42,7 @@ public:
 	MenuItem * AddItem(const char* text);
 
 	void MouseMove(int x, int y, int mx, int my);
+	void MouseDown(int b);
 
 	void DrawMenu(MenuItem* item, int dx, int dy);
 	bool CheckMenuBounds(MenuItem* item, int dx, int dy,int mx,int my);

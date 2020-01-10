@@ -20,6 +20,13 @@ public:
 	int GetY();
 	int GetW();
 	int GetH();
+	int LocalX()
+	{
+		return X;
+	}
+	int LocalY() {
+		return Y;
+	}
 	const char* GetText();
 	virtual bool InBounds(int x, int y);
 	void AddControl(UIControl* control);

@@ -74,7 +74,7 @@ void UI::Update() {
 
 		if (!keep) {
 
-			if (!UIOver->InBounds(MouseX, MouseY))
+			if (!UIOver->InBounds(MouseX-UIOver->GetX(), MouseY-UIOver->GetY()))
 			{
 				UIOver->MouseLeave();
 				UIOver = NULL;
@@ -139,7 +139,7 @@ bool UI::UpdateControl(UIControl* control) {
 	}
 
 	control->Update();
-	if (control->InBounds(MouseX, MouseY))
+	if (control->InBounds(MouseX-control->GetX(), MouseY-control->GetY()))
 	{
 
 		if (UIOver != NULL) {
