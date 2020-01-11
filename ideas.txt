@@ -1,4 +1,0 @@
-speed up = Safe,Risky, None;
-Dynamic Textures
-
-Software renderer too.
