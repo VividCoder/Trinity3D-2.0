@@ -59,14 +59,9 @@ void ScopeNineApp::Init()
 	auto smart = paste->AddItem("Auto1/n");
 	auto norm = paste->AddItem("Norm/n");
 
-	auto test = [&]
-	{
-		exit(1);
-	};
-
 	
 
-	norm->SetAction(test);
+	//norm->SetAction(test);
 
 	auto morem = MapMenu->AddItem("More/n");
 

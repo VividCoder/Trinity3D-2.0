@@ -43,7 +43,16 @@ UIControl* UI::GetRoot() {
 void UI::Update() {
 
 	//return;
-	UpdateControl(UIRoot);
+	if (Top != NULL) {
+		if (!UpdateControl(Top)) {
+
+			UpdateControl(UIRoot);
+		}
+	}
+	else {
+		UpdateControl(UIRoot);
+	}
+	
 
 	for (int i = 0; i < 16; i++) {
 		if (UIPressed[i] != NULL) {
@@ -139,10 +148,13 @@ bool UI::UpdateControl(UIControl* control) {
 	}
 
 	control->Update();
-	if (control->InBounds(MouseX-control->GetX(), MouseY-control->GetY()))
+	if (control->InBounds(MouseX, MouseY))
 	{
-
-		if (UIOver != NULL) {
+		printf("Control:");
+		printf(control->GetText());
+		printf("\n");
+		printf("X:%d Y:%d GX:%d GY:%d\n", control->LocalX(), control->LocalY(), control->GetX(), control->GetY());		if (UIOver != NULL) {
+			printf("MX:%d MY:%d\n", MouseX, MouseY);
 			if (UIOver != control) {
 				UIOver->MouseLeave();
 				UIOver = control;
@@ -211,6 +223,10 @@ void UI::Render() {
 
 	RenderControl(UIRoot);
 
+	if (Top != NULL) {
+
+		RenderControl(Top);
+	}
 	Drawer->DrawTex(MouseX, MouseY, 32, 32, CursorTex, 1, 1, 1, 1);
 
 	Drawer->End();

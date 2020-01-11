@@ -96,9 +96,10 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\Sample1\x64\Debug;C:\Projects\TrinityEngine\TrinityEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;TrinityEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile />
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

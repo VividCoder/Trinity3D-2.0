@@ -32,8 +32,10 @@ WindowControl::WindowControl() {
 
 	Resize->SetText("/n");
 
+	Title->SetText("Window\n");
+
 	AddControl(Title);
-	AddControl(Body);
+	//AddControl(Body);
 	AddControl(Resize);
 
 };

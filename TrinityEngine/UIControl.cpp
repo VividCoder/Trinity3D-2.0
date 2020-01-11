@@ -68,7 +68,7 @@ int UIControl::GetX() {
 	if (Root != NULL) {
 
 		rx = Root->GetX();
-
+	
 	}
 
 	return (rx + X);
@@ -109,7 +109,7 @@ const char* UIControl::GetText() {
 
 bool UIControl::InBounds(int x, int y) {
 
-	if (x >= LocalX() && y >= LocalY() && x <= (LocalX() + GetW()) && y <= (LocalY() + GetH()))
+	if (x >= GetX() && y >= GetY() && x <= (GetX() + GetW()) && y <= (GetY() + GetH()))
 	{
 		return true;
 	}

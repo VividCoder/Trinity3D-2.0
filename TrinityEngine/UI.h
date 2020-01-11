@@ -17,6 +17,12 @@ public:
 	void RenderControl(UIControl* control);
 	bool UpdateControl(UIControl* control);
 
+	void SetTop(UIControl* control) {
+
+		Top = control;
+
+	};
+
 	static void DrawTexture(Texture2D* tex, int x, int y, int w, int h, float r, float g, float b, float a);
 	static IDraw* Drawer;
 	static UITheme* Theme;
@@ -32,7 +38,7 @@ public:
 
 private:
 
-	
+	UIControl* Top = NULL;
 	UIControl* UIRoot;
 	Texture2D* CursorTex;
 	static int MouseX, MouseY, MouseZ;

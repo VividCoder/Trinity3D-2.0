@@ -21,6 +21,8 @@ void HorizontalSplitterControl::Render() {
 
 	//UI::Theme->DrawFrame(GetX(), GetY(), SplitPos - 4, GetH(),0.8f,0.8f,0.8f,1);
 	UI::Theme->DrawFrame(GetX() + SplitPos - 4, GetY(), 8, GetH(),2,2,2,1);
+//	printf("HSX:%d HSY:%d \n", SplitPos, 0);
+//	printf("GX:%d GY:%d H:%d\n", GetX(), GetY(), GetH());
 	//UI::Theme->DrawFrame(SplitPos + 4, GetY(), GetW() - (SplitPos + 4), GetH(),0.8f,0.8f,0.8f,1);
 
 

@@ -37,8 +37,8 @@ public:
 private:
 
 	int SplitPos = -1;
-	UIControl* Left;
-	UIControl* Right;
+	UIControl* Left = NULL;
+	UIControl* Right = NULL;
 	bool Dragging = false;
 	bool OverDrag = false;
 };

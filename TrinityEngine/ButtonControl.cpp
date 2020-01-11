@@ -31,6 +31,7 @@ void ButtonControl::MouseLeave() {
 
 void ButtonControl::MouseDown(int b) {
 	//exit(1);
+	//exit(1);
 	Pressed = true;
 	Action();
 };

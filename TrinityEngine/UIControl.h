@@ -72,7 +72,7 @@ public:
 
 private:
 	void (*actionPtr)();
-	UIControl* Root;
+	UIControl* Root = NULL;
 	std::vector<UIControl*> Controls;
 	const char* Text;
 	int X, Y, W, H;
