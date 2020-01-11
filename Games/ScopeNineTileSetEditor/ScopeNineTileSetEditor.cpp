@@ -3,9 +3,17 @@
 
 #include <iostream>
 #include "TileSetApp.h"
+#include <stdio.h>  /* defines FILENAME_MAX */
+
 
 int main()
 {
+
+    Application::ContentPath = "C:/Projects/TrinityEngine/TrinityEngine/x64/Debug/Data/";
+
+    const char* test = Application::GetPath("Edit/highlight1.png");
+
+
     std::cout << "Hello World!\n";
     std::cout << "Hello World!\n";
     TileSetApp* app = new TileSetApp();

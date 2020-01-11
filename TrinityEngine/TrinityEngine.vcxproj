@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Projects\TrinityEngine\3RDParty\glm;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\local\boost_1_72_0;C:\Projects\TrinityEngine\3RDParty\glm;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SupportJustMyCode>false</SupportJustMyCode>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Full</Optimization>
@@ -132,8 +132,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\local\boost_1_72_0\lib64-msvc-14.2;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;boost_filesystem-vc142-mt-x64-1_72.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -192,6 +192,7 @@
     <ClInclude Include="kEffect.h" />
     <ClInclude Include="kFont.h" />
     <ClInclude Include="kFrameBuffer.h" />
+    <ClInclude Include="ListControl.h" />
     <ClInclude Include="MainMenuControl.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapEditControl.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_truetype.h" />
     <ClInclude Include="Texture2D.h" />
+    <ClInclude Include="tinydir.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIControl.h" />
     <ClInclude Include="UIEvent.h" />
@@ -223,6 +225,7 @@
     <ClCompile Include="kEffect.cpp" />
     <ClCompile Include="kFont.cpp" />
     <ClCompile Include="kFrameBuffer.cpp" />
+    <ClCompile Include="ListControl.cpp" />
     <ClCompile Include="MainMenuControl.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapEditControl.cpp" />

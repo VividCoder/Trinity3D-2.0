@@ -26,12 +26,14 @@ public:
 	static int RenW;
 	static int RenH;
 	
-
+	static const char* GetPath(const char* content);
+	static const char* ContentPath;
 	void Run();
 
 private:
 	GLFWwindow* Window;
 	int WinWidth, WinHeight;
 	int RenWidth, RenHeight;
+	
 };
 

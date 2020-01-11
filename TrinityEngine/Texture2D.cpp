@@ -4,6 +4,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include <GL/glew.h>
+#include "Application.h"
 
 Texture2D::Texture2D(unsigned char* data, int w, int h) {
 
@@ -62,11 +63,14 @@ Texture2D::Texture2D(const char* path,bool alpha) {
 	if (alpha) {
 		ds = 4;
 	}
+
+	const char * npath = Application::GetPath(path);
+
 	
 	//iw = 0;
 	//ih = 0;
 //	bpp = 0;
-	Raw = stbi_load(path, &iw, &ih, &bpp, ds);
+	Raw = stbi_load(npath, &iw, &ih, &bpp, ds);
 
 	glGenTextures(1,&ID);
 

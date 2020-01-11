@@ -148,7 +148,7 @@ bool UI::UpdateControl(UIControl* control) {
 	}
 
 	control->Update();
-	if (control->InBounds(MouseX, MouseY))
+	if (control->InBounds(MouseX-control->GetX(), MouseY-control->GetY()))
 	{
 		printf("Control:");
 		printf(control->GetText());

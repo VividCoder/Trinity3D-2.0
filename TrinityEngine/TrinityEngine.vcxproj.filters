@@ -177,6 +177,12 @@
     <ClInclude Include="FileRequestorControl.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
+    <ClInclude Include="ListControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="tinydir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TrinityEngine.cpp">
@@ -261,6 +267,9 @@
       <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
     <ClCompile Include="FileRequestorControl.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="ListControl.cpp">
       <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
   </ItemGroup>

@@ -148,3 +148,26 @@ void Application::Run() {
 	}
 
 }
+
+const char * pLen(const char* path) {
+
+	char* str = (char *)malloc(512);
+
+
+	strcpy(str, Application::ContentPath);
+	
+	strcat(str, path);
+
+	return str;
+
+}
+
+const char * Application::GetPath(const char* content) {
+
+
+
+	return pLen(content);
+
+}
+
+const char* Application::ContentPath = "";

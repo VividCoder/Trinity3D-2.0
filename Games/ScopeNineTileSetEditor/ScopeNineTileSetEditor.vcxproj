@@ -90,7 +90,7 @@
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEngine\TrinityEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\local\boost_1_72_0;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEngine\TrinityEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <DebugInformationFormat>None</DebugInformationFormat>
       <ProgramDataBaseFileName />
@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\Sample1\x64\Debug;C:\Projects\TrinityEngine\TrinityEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\local\boost_1_72_0\lib64-msvc-14.2;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\Sample1\x64\Debug;C:\Projects\TrinityEngine\TrinityEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;TrinityEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ProgramDatabaseFile />
     </Link>

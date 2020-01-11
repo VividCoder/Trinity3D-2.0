@@ -13,6 +13,9 @@ TileSetApp::TileSetApp() {
 }
 
 void TileSetApp::Init() {
+
+	const char* ContentPath = "C:/Projects";
+
 	UITheme_Neon* theme = new UITheme_Neon();
 
 	UI::SetTheme(theme);
@@ -39,6 +42,8 @@ void TileSetApp::Init() {
 		filer->SetText("FILER/n");
 
 		filer->Set(50, 50, 350, 500);
+
+		filer->SetDir(ContentPath);
 
 		ui->SetTop(filer);
 

@@ -4,20 +4,25 @@
 #include "UI.h"
 UITheme_Neon::UITheme_Neon() {
 
-	ButTop = new Texture2D("Data/UI/Neon/ButTop.png", true);
-	ButDown = new Texture2D("Data/UI/Neon/ButDown.png", true);
-	ButLeft = new Texture2D("Data/UI/Neon/ButLeft.png", true);
-	ButRight = new Texture2D("Data/UI/Neon/ButRight.png", true);
 
-	ButLeftTop = new Texture2D("Data/UI/Neon/butlefttop.png", true);
-	ButLeftDown = new Texture2D("Data/UI/Neon/ButLeftDown.png", true);
+	ButTop = new Texture2D("UI/Neon/ButTop.png", true);
 
-	ButRightTop = new Texture2D("Data/UI/Neon/butrighttop.png", true);
-	ButRightDown = new Texture2D("Data/UI/Neon/Butrightdown.png", true);
+	ButDown = new Texture2D("UI/Neon/ButDown.png", true);
+	ButLeft = new Texture2D("UI/Neon/ButLeft.png", true);
+	ButRight = new Texture2D("UI/Neon/ButRight.png", true);
+
+	ButLeftTop = new Texture2D("UI/Neon/butlefttop.png", true);
+	ButLeftDown = new Texture2D("UI/Neon/ButLeftDown.png", true);
+		
+	ButRightTop = new Texture2D("UI/Neon/butrighttop.png", true);
+	ButRightDown = new Texture2D("UI/Neon/Butrightdown.png", true);
 	
-	ButMid = new Texture2D("Data/UI/Neon/butmid.png", true);
+	ButMid = new Texture2D("UI/Neon/butmid.png", true);
 
-	FrameBG = new Texture2D("Data/UI/Neon/butmid.png", true);
+	FrameBG = new Texture2D("UI/Neon/butmid.png", true);
+
+
+	//while (true) {};
 
 };
 
