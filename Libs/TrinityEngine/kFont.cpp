@@ -8,12 +8,15 @@
 #include <string.h>
 #include <malloc.h>
 #include "UI.h"
+#include "Application.h"
 //#include <iostream>
 //#include <fstream>
 
 
 kFont::kFont(const char* path) {
 
+
+	path = Application::GetPath(path);
 
 	//game = g;
 

@@ -3,7 +3,7 @@
 #include "Application.h"
 FXImageDraw::FXImageDraw(int w,int h) {
 
-	load("Data/Shader/2D/drawVS1.glsl", "Data/Shader/2D/drawFS1.glsl");
+	load("Shader/2D/drawVS1.glsl", "Shader/2D/drawFS1.glsl");
 	pw = w;
 	ph = h;
 };

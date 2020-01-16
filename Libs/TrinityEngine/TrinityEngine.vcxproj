@@ -104,7 +104,7 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Projects\TrinityEngine\3RDParty\glm;C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Git\Trinity3D-2.0\3rdparty\glm;C:\Git\Trinity3D-2.0\3rdparty\glew-2.1.0\include;C:\Git\Trinity3D-2.0\3rdparty\glfw-3.3.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -115,7 +115,7 @@
       <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
-      <AdditionalLibraryDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEngine\3RDParty\glfw-3.3.1.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Git\Trinity3D-2.0\3rdparty\glew-2.1.0\lib\Release\x64;C:\Git\Trinity3D-2.0\3rdparty\glfw-3.3.1.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

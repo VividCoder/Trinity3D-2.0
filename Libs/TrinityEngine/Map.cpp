@@ -24,7 +24,7 @@ Map::Map(int w, int h, int tw, int th) {
 	CamX = 0;
 	CamY = 0;
 
-	HighLight = new Texture2D("Data/Edit/highlight1.png", true);
+	HighLight = new Texture2D("Edit/highlight1.png", true);
 
 
 };

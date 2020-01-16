@@ -10,8 +10,8 @@
 *.userosscache
 *.sln.docstates
 
-*.tlog
-*.pdb
+*tlog
+*pdb
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -354,6 +354,3 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 *.tlog
-*.tlog
-*.pdb
-Apps/TileSetEditor/TileSetEditor/x64/Debug/TileSetEditor.tlog/link.write.1.tlog

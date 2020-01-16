@@ -9,7 +9,7 @@
 int main()
 {
 
-    Application::ContentPath = "C:/Projects/TrinityEngine/TrinityEngine/x64/Debug/Data/";
+    Application::ContentPath = "C:/Git/Trinity3D-2.0/Libs/TrinityEngine/x64/Debug/Data/";
 
     const char* test = Application::GetPath("Edit/highlight1.png");
 

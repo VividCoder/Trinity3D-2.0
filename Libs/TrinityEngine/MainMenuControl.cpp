@@ -192,7 +192,7 @@ bool MainMenuControl::InBounds(int x, int y) {
 	int mx = 3;
 //	return false;
 
-	printf(">>>X:%d Y:%d\n", x, y);
+	//printf(">>>X:%d Y:%d\n", x, y);
 
 	for (int i = 0; i < Items.size(); i++) {
 

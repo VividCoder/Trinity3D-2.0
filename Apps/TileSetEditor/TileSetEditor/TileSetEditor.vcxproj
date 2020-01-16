@@ -107,14 +107,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\include;C:\Projects\TrinityEcoSystem\Libs\TrinityEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Git\Trinity3D-2.0\3rdparty\glew-2.1.0\include;C:\Git\Trinity3D-2.0\Libs\TrinityEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32.lib;TrinityEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Projects\TrinityEngine\3RDParty\glew-2.1.0\lib\Release\x64;C:\Projects\TrinityEcoSystem\Libs\TrinityEngine\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Git\Trinity3D-2.0\3rdparty\glew-2.1.0\lib\Release\x64;C:\Git\Trinity3D-2.0\Libs\TrinityEngine\x64\Debug;C:\Git\Trinity3D-2.0\3rdparty\glfw-3.3.1.bin.WIN64\lib-vc2019;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

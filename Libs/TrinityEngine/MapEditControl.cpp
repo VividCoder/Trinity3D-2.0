@@ -4,9 +4,9 @@
 
 MapEditControl::MapEditControl(int mw, int mh, int tw, int th) {
 
-
+	SetText("MapEdit:/n");
 	CurMap = new Map(mw, mh, tw, th);
-	MapTile* noTile = new MapTile("Data/Edit/notile.png");
+	MapTile* noTile = new MapTile("Edit/notile.png");
 
 	CurMap->SetTile(1, 0,0, noTile);
 
@@ -25,9 +25,10 @@ MapEditControl::MapEditControl(int mw, int mh, int tw, int th) {
 }
 
 void MapEditControl::MouseDown(int b) {
-
+	
 	if (b == 1) {
 		Dragging = true;
+	//	exit(1);
 	}
 };
 
@@ -35,12 +36,14 @@ void MapEditControl::MouseUp(int b) {
 
 	if (b == 1) {
 		Dragging = false;
+	//	exit(1);
 	}
 
 };
 
 void MapEditControl::MouseMove(int x, int y, int dx, int dy)
 {
+	//exit(1);
 	if (Dragging) {
 		CurMap->Move(-dx, -dy);
 	}

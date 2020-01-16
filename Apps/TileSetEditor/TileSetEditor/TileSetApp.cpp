@@ -52,7 +52,7 @@ void TileSetApp::Init() {
 	f_addimg->SetAction(a_addimg);
 
 
-	auto map = new MapEditControl(64, 64, 64, 64);
+	auto map = new MapEditControl(16, 16, 64, 64);
 
 	//return;
 	Split->SetSplit(Width()-300);

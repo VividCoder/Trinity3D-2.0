@@ -6,7 +6,7 @@
 
 ButtonControl::ButtonControl() {
 
-	Back = new Texture2D("Data/UI/Neon/button1.png", true);
+	Back = new Texture2D("UI/Neon/button1.png", true);
 	Over = false;
 	Pressed = false;
 };

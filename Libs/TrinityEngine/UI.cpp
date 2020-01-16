@@ -9,7 +9,8 @@ UI::UI(int w,int h) {
 	UIRoot = new UIControl();
 
 	Drawer = new IDraw(w, h);
-	CursorTex = new Texture2D("Data/UI/Neon/cursor1.png", true);
+	CursorTex = new Texture2D("UI/Neon/cursor1.png", true);
+
 	MouseX = 1;
 	MouseY = 1;
 	MouseZ = 0;
@@ -21,7 +22,7 @@ UI::UI(int w,int h) {
 	PressedBut = -1;
 	LastX = 0;
 	LastY = 0;
-	UIFont = new kFont("Data/font/font.pf");
+	UIFont = new kFont("font/font.pf");
 
 }
 
@@ -42,6 +43,7 @@ UIControl* UI::GetRoot() {
 
 void UI::Update() {
 
+	printf("Begin update\n");
 	//return;
 	if (Top != NULL) {
 		if (!UpdateControl(Top)) {
@@ -52,7 +54,7 @@ void UI::Update() {
 	else {
 		UpdateControl(UIRoot);
 	}
-	
+	printf("End update\n");
 
 	for (int i = 0; i < 16; i++) {
 		if (UIPressed[i] != NULL) {
@@ -69,6 +71,7 @@ void UI::Update() {
 
 	if (UIOver != NULL) {
 
+		printf("Over:%s", UIOver->GetText());
 		bool keep = false;
 
 		for (int cx = 0; cx < 16; cx++) {
@@ -83,7 +86,7 @@ void UI::Update() {
 
 		if (!keep) {
 
-			if (!UIOver->InBounds(MouseX-UIOver->GetX(), MouseY-UIOver->GetY()))
+			if (!UIOver->InBounds(MouseX, MouseY))
 			{
 				UIOver->MouseLeave();
 				UIOver = NULL;
@@ -138,6 +141,8 @@ void UI::Update() {
 
 bool UI::UpdateControl(UIControl* control) {
 
+	printf("Updating:%s\n", control->GetText());
+	printf("GX:%d GY:%d W:%d H:%d", control->GetX(), control->GetY(), control->GetW(), control->GetH());
 	for (int i = 0; i < control->ControlsCount(); i++) {
 
 		int reali = control->ControlsCount() - (i + 1);
@@ -147,9 +152,11 @@ bool UI::UpdateControl(UIControl* control) {
 
 	}
 
+	printf("Updating internal:%s\n", control->GetText());
 	control->Update();
-	if (control->InBounds(MouseX-control->GetX(), MouseY-control->GetY()))
+	if (control->InBounds(MouseX, MouseY))
 	{
+		printf("in bounds.\n");
 		printf("Control:");
 		printf(control->GetText());
 		printf("\n");
@@ -189,7 +196,7 @@ bool UI::UpdateControl(UIControl* control) {
 	}
 	
 	else {
-
+		printf("Out of bounds.\n");
 		if (control == UIOver && control!=UIOver) {
 			UIOver = NULL;
 			control->MouseLeave();
@@ -206,7 +213,7 @@ bool UI::UpdateControl(UIControl* control) {
 			}
 		}
 	}
-
+	return false;
 };
 
 void UI::DrawTexture(Texture2D* tex, int x, int y, int w, int h, float r, float g, float b, float a) {

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "kEffect.h"
+#include "Application.h"
 
 
 
@@ -29,6 +30,10 @@ std::string readFile(const char* filePath) {
 }
 
 void kEffect::load(const char* v, const char* f) {
+
+	v = Application::GetPath(v);
+	f = Application::GetPath(f);
+
 
 	vID = glCreateShader(GL_VERTEX_SHADER);
 
